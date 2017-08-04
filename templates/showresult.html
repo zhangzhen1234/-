@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择后的结果</title>
+</head>
+<body>
+    <h1>{{ Que.question_text }}</h1>
+    <br>
+    <ul>
+{#        在html中获取所有对象不加（）而.py需要（）来获取全部的对象#}
+        {% for x in Que.choice_set.all %}
+            <li>{{ x.choicetext }}----{{ x.vote }}</li>
+        {% endfor %}
+
+    </ul>
+    <a href="{% url 'poll:index' %}">返回首页</a>
+</body>
+</html>

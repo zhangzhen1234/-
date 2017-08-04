@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+    {% for x in Ques %}
+{#        点击链接时，跳转链接，携带这个问题的id，就是哪个问题#}
+        <a href="{% url 'poll:show' x.id %}">{{ x.question_text }}</a>
+        <br><br>
+    {% endfor %}
+</body>
+</html>
